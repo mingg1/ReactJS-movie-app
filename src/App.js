@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+function Food({ name, image }) {
+  return (
+    <div>
+      <h1>I like {name}</h1>
+      <img src={image} />
+    </div>
+  );
+}
+
+const foodLike = [{ name: "Kimchi", image: "https://www.maangchi.com/wp-content/uploads/2019/11/vegankimchi-insta.jpg" }];
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hi!!!</h1>
+      {foodLike.map((food) => (
+        <Food name={food.name} image={food.image} />
+      ))}
     </div>
   );
 }
